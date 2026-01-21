@@ -29,6 +29,6 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.6.0
       with:
-        registry: acrapidemopedrohosoares001
-        username: acrapidemopedrohosoares001
-        password: KxDAGaCUgynsfa/MQc1kZQQDm6nkYkyMfh6F3iOagg+ACRAv9zvS         
+        registry: 'acrapidemopedrohosoares001.azurecr.io'
+        username: 'acrapidemopedrohosoares001'
+        password: 'KxDAGaCUgynsfa/MQc1kZQQDm6nkYkyMfh6F3iOagg+ACRAv9zvS'       
