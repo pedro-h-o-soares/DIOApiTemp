@@ -31,10 +31,22 @@ jobs:
       with:
         registry: 'acrapidemopedrohosoares001.azurecr.io'
         username: 'acrapidemopedrohosoares001'
-        password: 'KxDAGaCUgynsfa/MQc1kZQQDm6nkYkyMfh6F3iOagg+ACRAv9zvS'       
+        password: 'KxDAGaCUgynsfa/MQc1kZQQDm6nkYkyMfh6F3iOagg+ACRAv9zvS'
+
+    - name: Extract metadata (tags, labels) for Docker
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: acrapidemopedrohosoares001/api-dio-test
+        tags: |
+          type=schedule,pattern=latest
+          type=sha,format=short
+          type=ref,event=branch
         
     - name: Build and push Docker images
       uses: docker/build-push-action@v6.18.0
       with:
         file: ./DIOApiTemp/Dockerfile
         push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
