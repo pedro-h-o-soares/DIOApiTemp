@@ -1,0 +1,6 @@
+@DIOApiTemp_HostAddress = http://localhost:5120
+
+GET {{DIOApiTemp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
