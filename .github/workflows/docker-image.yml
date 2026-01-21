@@ -29,15 +29,15 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3.6.0
       with:
-        registry: 'acrapidemopedrohosoares001.azurecr.io'
-        username: 'acrapidemopedrohosoares001'
-        password: 'KxDAGaCUgynsfa/MQc1kZQQDm6nkYkyMfh6F3iOagg+ACRAv9zvS'
+        registry: acrapidemopedrohosoares001.azurecr.io
+        username: acrapidemopedrohosoares001
+        password: KxDAGaCUgynsfa/MQc1kZQQDm6nkYkyMfh6F3iOagg+ACRAv9zvS
 
     - name: Extract metadata (tags, labels) for Docker
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: acrapidemopedrohosoares001/api-dio-test
+        images: acrapidemopedrohosoares001.azurecr.io/api-dio-test
         tags: |
           type=schedule,pattern=latest
           type=sha,format=short
